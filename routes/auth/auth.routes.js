@@ -30,7 +30,7 @@ Class definition
         // Error: no body present
         if (typeof req.body === 'undefined' || req.body === null) { return sendBodyError(res, 'No body data provided') }
         // Check fields in the body
-        const { miss, extra, ok } = checkFields(['nick_name' , 'email', 'password'], req.body);
+        const { miss, extra, ok } = checkFields([ 'email', 'password'], req.body);
         //=> Error: bad fields
         if (!ok) { return sendFieldsError(res, 'Bad fields provided', miss, extra) }
         // Request is OK
